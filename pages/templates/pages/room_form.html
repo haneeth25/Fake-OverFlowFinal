@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    body{
+        background : lightblue;
+    }
+    div.answer{
+      padding: 25px;
+      background : lightblue;
+      display: flex;
+    }
+    </style>
+
+<div class = 'answer'>
+    <form method = 'POST' action  ="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value = 'submit'></input>
+    </form>
+
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class='form'>
+    <form method = 'POST' action = ''>
+        {% csrf_token %}
+
+        <label>Username:-</label>
+        <br>
+        <input type = 'text' name = 'username' placeholder="enter username"/>
+        <br>
+        <label>Email:-</label>
+        <br>
+        <input type = 'email' name = 'email' placeholder="enter username"/>
+        <br>
+        <br>
+        <label>password:-</label>
+        <br>
+        <input type = 'password' name = 'password1' placeholder="enter password"/>
+        <br>
+        <br>
+        <label>password:-</label>
+        <br>
+        <input type = 'password' name = 'password2' placeholder="enter password"/>
+        <br>
+        <br>
+        <input type = 'submit' value = 'sign-in'></input>
+        <br>
+
+    </form>
+</div>
+<style>
+    body{
+        background : lightblue;
+    }
+    div.form{
+      padding: 25px;
+      background : lightblue;
+      display: flex;
+    }
+    </style>
+
+{% endblock content%}

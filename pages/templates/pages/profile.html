@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<h1 style="text-align: center;">Your activity</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6" id="div1">
+            <div>
+                {% for room in room%}
+                <div class="card">
+                    <div class="card-header">
+                      <a href = '{% url "qna" room.id%}'>{{room.topic}}</a>
+                    </div>
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p>{{room.name}}</p>
+                        <footer class="blockquote-footer">{{room.created}}<cite title="Source Title">Source Title</cite></footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                {% endfor%}
+            </div>
+        </div>
+        <div class="col-xs-6" id="div2">
+            <div>
+                {% for answer in answer %}
+                <div class="card">
+                    <div class="card-header">
+                      <a href = "{% url 'qna' answer.id %}">Your response</a>
+                    </div>
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p>{{answer.body}}</p>
+                        <footer class="blockquote-footer">{{answer.created}}</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                {% endfor%}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}
